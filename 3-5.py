@@ -41,7 +41,7 @@ partial_y_train = one_hot_train_labels[1000:]
 
 history = model.fit(partial_x_train,
                     partial_y_train,
-                    epochs=20,
+                    epochs=8,
                     batch_size=512,
                     validation_data=(x_val, y_val))
 loss = history.history['loss']
@@ -54,5 +54,18 @@ plt.plot(epochs, val_loss, 'b', label='Validation loss')
 plt.title('Training and validation loss')
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
+plt.legend()
+plt.show()
+
+plt.clf()
+
+acc = history.history['acc']
+val_acc = history.history['val_acc']
+
+plt.plot(epochs, acc, 'bo', label='Training acc')
+plt.plot(epochs, val_acc, 'b', label='Validation acc')
+plt.title('Training and validation accuracy')
+plt.xlabel('Epochs')
+plt.ylabel('Accuracy')
 plt.legend()
 plt.show()
