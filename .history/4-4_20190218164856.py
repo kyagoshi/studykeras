@@ -21,8 +21,8 @@ y_train = np.asarray(train_labels).astype('float32')
 y_test = np.asarray(test_labels).astype('float32')
 
 model = models.Sequential()
-model.add(layers.Dense(16, kernel_regularizer=regularizers.l2(0.001), activation='relu', input_shape=(10000,)))
-model.add(layers.Dense(16, kernel_regularizer=regularizers.l2(0.001), activation='relu'))
+model.add(layers.Dense(16, kernel_regularizer=regularizers.12(0.001), activation='relu', input_shape=(10000,)))
+model.add(layers.Dense(16, kernel_regularizer=regularizers.12(0.001), activation='relu'))
 model.add(layers.Dense(1, activation='sigmoid'))
 
 x_val = x_train[:10000]
